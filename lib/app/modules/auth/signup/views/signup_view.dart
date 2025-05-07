@@ -3,16 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mini_service_booking/app/modules/auth/login/widgets/r_rounded_container.dart';
 import 'package:mini_service_booking/app/modules/auth/login/widgets/r_social_icon.dart';
+import 'package:mini_service_booking/app/modules/auth/signup/controllers/signup_controller.dart';
 import 'package:mini_service_booking/core/utils/dimensions.dart';
 import 'package:mini_service_booking/core/utils/form_validator.dart';
 import 'package:mini_service_booking/core/widgets/buttons/r_main_button.dart';
 import 'package:mini_service_booking/core/widgets/input_fields/r_input_field.dart';
 import 'package:mini_service_booking/core/widgets/texts/r_divider_text.dart';
 
-import '../controllers/login_controller.dart';
-
-class LoginView extends GetView<LoginController> {
-  const LoginView({super.key});
+class SignupView extends GetView<SignupController> {
+  const SignupView({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,11 +20,11 @@ class LoginView extends GetView<LoginController> {
           children: [
             Positioned(
               top: 0,
-              right: 0,
+              left: 0,
               child: Hero(
                 tag: "rounded_container",
                 child: RRoundedContainer(
-                  roundDirection: RoundDirection.left,
+                  roundDirection: RoundDirection.right,
                 ),
               ),
             ),
@@ -39,7 +38,7 @@ class LoginView extends GetView<LoginController> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      Text('Login', style: context.textTheme.headlineLarge),
+                      Text('Sign Up', style: context.textTheme.headlineLarge),
                       SizedBox(height: Dimensions(context).height30),
                       RInputField(
                         controller: controller.emailController,
@@ -47,6 +46,15 @@ class LoginView extends GetView<LoginController> {
                         prefixIcon: Icons.email_rounded,
                         validator: FormValidator.emailValidator,
                         keyboardType: TextInputType.emailAddress,
+                        textInputAction: TextInputAction.next,
+                      ),
+                      SizedBox(height: Dimensions(context).height15),
+                      RInputField(
+                        controller: controller.userNameController,
+                        labelText: "Username",
+                        prefixIcon: Icons.person_rounded,
+                        validator: FormValidator.userNameValidator,
+                        keyboardType: TextInputType.text,
                         textInputAction: TextInputAction.next,
                       ),
                       SizedBox(height: Dimensions(context).height15),
@@ -59,33 +67,23 @@ class LoginView extends GetView<LoginController> {
                         textInputAction: TextInputAction.done,
                       ),
                       SizedBox(height: Dimensions(context).height30),
-                      Row(
-                        children: [
-                          TextButton(
-                            onPressed: () {},
-                            child: Text("Forgot Password?"),
-                          ),
-                          Expanded(
-                            child: Obx(
-                              () => RMainButton(
-                                label: "Login",
-                                onPressed: () async => controller.login(),
-                                isLoading: controller.isLoading.value,
-                              ),
-                            ),
-                          ),
-                        ],
+                      Obx(
+                        () => RMainButton(
+                          label: "Sign Up",
+                          onPressed: () async => controller.signup(),
+                          isLoading: controller.isLoading.value,
+                        ),
                       ),
                       SizedBox(height: Dimensions(context).height20),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text("Don't have an account?"),
+                          Text("Already have an account?"),
                           TextButton(
                             onPressed: () {
-                              Get.offNamed("/signup");
+                              Get.offNamed("/login");
                             },
-                            child: Text('Sign Up'),
+                            child: Text('Login'),
                           ),
                         ],
                       ),

@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class LoginController extends GetxController {
+class SignupController extends GetxController {
   final TextEditingController emailController = TextEditingController();
+  final TextEditingController userNameController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   final RxBool isLoading = false.obs;
 
-  Future<void> login() async {
+  Future<void> signup() async {
     if (Get.focusScope?.hasFocus ?? false) {
       Get.focusScope?.unfocus();
     }
@@ -26,6 +27,7 @@ class LoginController extends GetxController {
   void onClose() {
     super.onClose();
     emailController.dispose();
+    userNameController.dispose();
     passwordController.dispose();
   }
 }
