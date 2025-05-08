@@ -18,7 +18,7 @@ Widget homeBottomSheet(BuildContext context, HomeController controller) {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              "Filter Services",
+              "text_Filter_Services".tr,
               style: context.textTheme.titleLarge,
             ),
             RCircledIconButton(
@@ -31,7 +31,7 @@ Widget homeBottomSheet(BuildContext context, HomeController controller) {
         ),
         SizedBox(height: Dimensions(context).height15),
         Text(
-          "Categories",
+          "text_Categories".tr,
           style: context.textTheme.titleMedium,
         ),
         SizedBox(height: Dimensions(context).height10),
@@ -67,7 +67,8 @@ Widget homeBottomSheet(BuildContext context, HomeController controller) {
         SizedBox(height: Dimensions(context).height15),
         Obx(
           () => Text(
-            "Price (Max: ETB ${controller.maxPrice.value.toInt()})",
+            "text_Price_Max"
+                .trParams({'maxPrice': controller.maxPrice.value.toString()}),
             style: context.textTheme.titleMedium,
           ),
         ),
@@ -77,7 +78,8 @@ Widget homeBottomSheet(BuildContext context, HomeController controller) {
             max: 1000,
             min: 0,
             divisions: 100,
-            label: "ETB ${controller.maxPrice.value.toInt()}",
+            label: "text_ETB_Price"
+                .trParams({'price': controller.maxPrice.value.toString()}),
             onChanged: controller.updateMaxPrice,
             activeColor: Get.theme.primaryColor,
           ),
@@ -85,7 +87,8 @@ Widget homeBottomSheet(BuildContext context, HomeController controller) {
         SizedBox(height: Dimensions(context).height15),
         Obx(
           () => Text(
-            "Rating (Min: ${controller.minRating.value.toInt()})",
+            "text_Rating_Min"
+                .trParams({'minRating': controller.minRating.value.toString()}),
             style: context.textTheme.titleMedium,
           ),
         ),
@@ -107,7 +110,7 @@ Widget homeBottomSheet(BuildContext context, HomeController controller) {
             child: Obx(
               () => RMainButton(
                 isLoading: controller.isFiltering.value,
-                label: "Apply Filter",
+                label: "text_Apply_Filter".tr,
                 onPressed: () async {
                   final filteredServices = await controller.applyFilters();
                   Get.to(() => const FilteredServicesView(), arguments: {

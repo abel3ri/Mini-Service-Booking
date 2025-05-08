@@ -13,10 +13,17 @@ class HomeController extends GetxController {
   final RxDouble maxPrice = 1000.0.obs;
   final RxDouble minRating = 0.0.obs;
   final List<String> categories = [
-    'Health',
+    'Outdoors',
+    'Movies',
     'Computers',
-    'Electronics',
-    'Jewelry'
+    'Kids',
+    "Games",
+    "Music",
+    "Toys",
+    "Books",
+    "Jewelry",
+    "Baby",
+    "Shoes"
   ];
 
   @override

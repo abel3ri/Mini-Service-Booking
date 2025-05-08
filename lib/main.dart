@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mini_service_booking/core/controllers/locale_controller.dart';
 import 'package:mini_service_booking/core/controllers/theme_controller.dart';
+import 'package:mini_service_booking/core/l10n/app_translations.dart';
 import 'package:mini_service_booking/core/services/theme_service.dart';
 import 'package:mini_service_booking/core/utils/init_app_dependecies.dart';
 
@@ -24,6 +25,7 @@ void main() async {
       defaultTransition: Transition.cupertino,
       locale: localeController.currentLocale.value,
       fallbackLocale: const Locale("en", "us"),
+      translations: AppTranslations(),
       debugShowCheckedModeBanner: false,
     ),
   );

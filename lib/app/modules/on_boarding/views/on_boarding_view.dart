@@ -14,9 +14,9 @@ class OnBoardingView extends GetView<OnBoardingController> {
   Widget build(BuildContext context) {
     final List<PageViewModel> pages = [
       PageViewModel(
-        title: "Book services effortlessly".tr,
+        title: "text_Book_services_effortlessly".tr,
         bodyWidget: Text(
-          "Discover and book trusted local services in just a few taps.".tr,
+          "text_Discover_and_book_trusted_local_services".tr,
           textAlign: TextAlign.center,
           style: context.textTheme.bodyMedium!.copyWith(
             fontSize: Dimensions(context).font15,
@@ -28,10 +28,9 @@ class OnBoardingView extends GetView<OnBoardingController> {
         ),
       ),
       PageViewModel(
-        title: "Track and manage your bookings".tr,
+        title: "text_Track_and_manage_your_bookings".tr,
         bodyWidget: Text(
-          "Stay updated with real-time status and manage all your service requests in one place."
-              .tr,
+          "text_Stay_updated_with_real_time_status".tr,
           textAlign: TextAlign.center,
           style: context.textTheme.bodyMedium!.copyWith(
             fontSize: Dimensions(context).font15,
@@ -43,10 +42,9 @@ class OnBoardingView extends GetView<OnBoardingController> {
         ),
       ),
       PageViewModel(
-        title: "Connect with professionals".tr,
+        title: "text_Connect_with_professionals".tr,
         bodyWidget: Text(
-          "Chat or call experts directly to get your issues resolved faster."
-              .tr,
+          "text_Chat_or_call_experts_directly".tr,
           textAlign: TextAlign.center,
           style: context.textTheme.bodyMedium!.copyWith(
             fontSize: Dimensions(context).font15,
@@ -72,7 +70,7 @@ class OnBoardingView extends GetView<OnBoardingController> {
         },
         showSkipButton: true,
         skip: Text(
-          "Skip".tr,
+          "text_Skip".tr,
           style: context.textTheme.titleMedium?.copyWith(
             color: Get.theme.primaryColor,
           ),
@@ -82,7 +80,7 @@ class OnBoardingView extends GetView<OnBoardingController> {
           size: Dimensions(context).font15,
         ),
         done: Text(
-          "Done".tr,
+          "text_Done".tr,
           style: context.textTheme.titleMedium?.copyWith(
             color: Get.theme.primaryColor,
           ),

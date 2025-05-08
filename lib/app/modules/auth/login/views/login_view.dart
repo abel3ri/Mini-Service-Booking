@@ -39,11 +39,12 @@ class LoginView extends GetView<LoginController> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      Text('Login', style: context.textTheme.headlineLarge),
+                      Text('text_Login'.tr,
+                          style: context.textTheme.headlineLarge),
                       SizedBox(height: Dimensions(context).height30),
                       RInputField(
                         controller: controller.emailController,
-                        labelText: "Email",
+                        labelText: "text_E_mail".tr,
                         prefixIcon: Icons.email_rounded,
                         validator: FormValidator.emailValidator,
                         keyboardType: TextInputType.emailAddress,
@@ -53,7 +54,7 @@ class LoginView extends GetView<LoginController> {
                       Obx(
                         () => RInputField(
                           controller: controller.passwordController,
-                          labelText: "Password",
+                          labelText: "text_Password".tr,
                           prefixIcon: Icons.lock_rounded,
                           validator: FormValidator.passwordValidator,
                           keyboardType: TextInputType.visiblePassword,
@@ -74,12 +75,12 @@ class LoginView extends GetView<LoginController> {
                         children: [
                           TextButton(
                             onPressed: () {},
-                            child: Text("Forgot Password?"),
+                            child: Text("text_Forgot_Password".tr),
                           ),
                           Expanded(
                             child: Obx(
                               () => RMainButton(
-                                label: "Login",
+                                label: "text_Login".tr,
                                 onPressed: () async => controller.login(),
                                 isLoading: controller.isLoading.value,
                               ),
@@ -91,18 +92,18 @@ class LoginView extends GetView<LoginController> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text("Don't have an account?"),
+                          Text("text_Dont_have_an_account".tr),
                           TextButton(
                             onPressed: () {
                               Get.offNamed("/signup");
                             },
-                            child: Text('Sign Up'),
+                            child: Text('text_Sign_Up'.tr),
                           ),
                         ],
                       ),
                       SizedBox(height: Dimensions(context).height20),
                       RDividerText(
-                        text: "Or",
+                        text: "text_Or_Continue_With".tr,
                       ),
                       SizedBox(height: Dimensions(context).height20),
                       Hero(

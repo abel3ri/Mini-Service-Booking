@@ -38,15 +38,15 @@ class ServiceFormView extends GetView<ServiceFormController> {
                       alignment: Alignment.centerLeft,
                       child: Text(
                         controller.isEditing
-                            ? "Update Service"
-                            : "Create Service",
+                            ? "text_Update_Service".tr
+                            : "text_Create_Service".tr,
                         style: context.textTheme.headlineMedium,
                       ),
                     ),
                     SizedBox(height: Dimensions(context).height20),
                     RInputField(
                       controller: controller.nameController,
-                      labelText: "Name",
+                      labelText: "text_Name".tr,
                       textInputAction: TextInputAction.next,
                       keyboardType: TextInputType.text,
                       validator: FormValidator.requiredValidator,
@@ -54,7 +54,7 @@ class ServiceFormView extends GetView<ServiceFormController> {
                     SizedBox(height: Dimensions(context).height10),
                     RInputField(
                       controller: controller.categoryController,
-                      labelText: "Category",
+                      labelText: "text_Category".tr,
                       keyboardType: TextInputType.text,
                       textInputAction: TextInputAction.next,
                       validator: FormValidator.requiredValidator,
@@ -62,7 +62,7 @@ class ServiceFormView extends GetView<ServiceFormController> {
                     SizedBox(height: Dimensions(context).height10),
                     RInputField(
                       controller: controller.priceController,
-                      labelText: "Price",
+                      labelText: "text_Price".tr,
                       textInputAction: TextInputAction.next,
                       keyboardType: TextInputType.number,
                       validator: FormValidator.requiredValidator,
@@ -70,7 +70,7 @@ class ServiceFormView extends GetView<ServiceFormController> {
                     SizedBox(height: Dimensions(context).height10),
                     RInputField(
                       controller: controller.durationController,
-                      labelText: "Duration",
+                      labelText: "text_Duration".tr,
                       textInputAction: TextInputAction.next,
                       keyboardType: TextInputType.number,
                       validator: FormValidator.requiredValidator,
@@ -78,7 +78,7 @@ class ServiceFormView extends GetView<ServiceFormController> {
                     SizedBox(height: Dimensions(context).height10),
                     RInputField(
                       controller: controller.ratingController,
-                      labelText: "Rating",
+                      labelText: "text_Rating".tr,
                       textInputAction: TextInputAction.next,
                       keyboardType: TextInputType.number,
                       validator: FormValidator.requiredValidator,
@@ -86,7 +86,7 @@ class ServiceFormView extends GetView<ServiceFormController> {
                     SizedBox(height: Dimensions(context).height10),
                     RInputField(
                       controller: controller.descriptionController,
-                      labelText: "Description",
+                      labelText: "text_Description".tr,
                       textInputAction: TextInputAction.newline,
                       keyboardType: TextInputType.number,
                       isMultiline: true,
@@ -101,7 +101,7 @@ class ServiceFormView extends GetView<ServiceFormController> {
                       ),
                       child: Obx(
                         () => SwitchListTile.adaptive(
-                          title: Text("Is Available"),
+                          title: Text("text_Is_Available".tr),
                           value: controller.isAvailable.value,
                           onChanged: (value) {
                             controller.isAvailable.value = value;
@@ -116,8 +116,8 @@ class ServiceFormView extends GetView<ServiceFormController> {
                         () => RMainButton(
                           isLoading: controller.isLoading.value,
                           label: controller.isEditing
-                              ? "Update Service"
-                              : "Create Service",
+                              ? "text_Update_Service".tr
+                              : "text_Create_Service".tr,
                           onPressed: () async {
                             if (controller.isEditing) {
                               controller.updateService();

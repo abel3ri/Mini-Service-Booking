@@ -9,11 +9,11 @@ AppBar homeAppBar(BuildContext context) {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          "Hello Abel,",
+          "text_Hello_user".trParams({'name': 'Abel'}),
           style: context.textTheme.titleLarge,
         ),
         Text(
-          "Welcome to Service Booking",
+          "text_Welcome_to_Service_Booking".tr,
           style: context.textTheme.bodySmall,
         )
       ],

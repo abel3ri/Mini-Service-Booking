@@ -15,12 +15,12 @@ class FilteredServicesView extends StatelessWidget {
     final List<ServiceModel> services = Get.arguments?['services'] ?? [];
 
     return Scaffold(
-      appBar: RAppBar(title: "Filtered Services"),
+      appBar: RAppBar(title: "text_Filtered_Services".tr),
       body: services.isEmpty
           ? RNotFound(
-              title: "No Services Found",
-              subtitle: "No services match the selected filters",
-              retryText: "Go Back",
+              title: "text_No_Services_Found".tr,
+              subtitle: "text_No_Services_Found".tr,
+              retryText: "text_Go_Back".tr,
               onRetry: Get.back,
             )
           : MasonryGridView.builder(

@@ -38,11 +38,12 @@ class SignupView extends GetView<SignupController> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      Text('Sign Up', style: context.textTheme.headlineLarge),
+                      Text('text_Sign_Up'.tr,
+                          style: context.textTheme.headlineLarge),
                       SizedBox(height: Dimensions(context).height30),
                       RInputField(
                         controller: controller.emailController,
-                        labelText: "Email",
+                        labelText: "text_E_mail".tr,
                         prefixIcon: Icons.email_rounded,
                         validator: FormValidator.emailValidator,
                         keyboardType: TextInputType.emailAddress,
@@ -51,7 +52,7 @@ class SignupView extends GetView<SignupController> {
                       SizedBox(height: Dimensions(context).height15),
                       RInputField(
                         controller: controller.userNameController,
-                        labelText: "Username",
+                        labelText: "text_Username".tr,
                         prefixIcon: Icons.person_rounded,
                         validator: FormValidator.userNameValidator,
                         keyboardType: TextInputType.text,
@@ -61,7 +62,7 @@ class SignupView extends GetView<SignupController> {
                       Obx(
                         () => RInputField(
                           controller: controller.passwordController,
-                          labelText: "Password",
+                          labelText: "text_Password".tr,
                           prefixIcon: Icons.lock_rounded,
                           validator: FormValidator.passwordValidator,
                           keyboardType: TextInputType.visiblePassword,
@@ -80,7 +81,7 @@ class SignupView extends GetView<SignupController> {
                       SizedBox(height: Dimensions(context).height30),
                       Obx(
                         () => RMainButton(
-                          label: "Sign Up",
+                          label: "text_Sign_Up".tr,
                           onPressed: () async => controller.signup(),
                           isLoading: controller.isLoading.value,
                         ),
@@ -89,18 +90,18 @@ class SignupView extends GetView<SignupController> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text("Already have an account?"),
+                          Text("text_Already_have_an_account".tr),
                           TextButton(
                             onPressed: () {
                               Get.offNamed("/login");
                             },
-                            child: Text('Login'),
+                            child: Text('text_Login'.tr),
                           ),
                         ],
                       ),
                       SizedBox(height: Dimensions(context).height20),
                       RDividerText(
-                        text: "Or",
+                        text: "text_Or_Continue_With".tr,
                       ),
                       SizedBox(height: Dimensions(context).height20),
                       Hero(

@@ -18,7 +18,7 @@ class ServicesView extends GetView<ServicesController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: RAppBar(
-        title: "Services",
+        title: "text_Services".tr,
         actions: [
           Padding(
             padding: EdgeInsets.only(

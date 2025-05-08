@@ -30,7 +30,7 @@ Widget homeSearchInput(BuildContext context, HomeController controller) {
         ),
         SizedBox(width: Dimensions(context).width10),
         Text(
-          "Search...",
+          "text_Search_services".tr,
           style: context.textTheme.titleMedium?.copyWith(
             color: Colors.grey,
           ),
@@ -41,6 +41,7 @@ Widget homeSearchInput(BuildContext context, HomeController controller) {
           showBorder: false,
           onPressed: () {
             rShowModalBottomSheet(
+              isScrollControlled: true,
               context: context,
               child: homeBottomSheet(context, controller),
             );

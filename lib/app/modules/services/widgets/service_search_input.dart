@@ -26,7 +26,7 @@ Widget serviceSearchInput(BuildContext context, ServicesController controller) {
           autofocus: controller.autoFocus,
           controller: controller.searchController,
           decoration: InputDecoration(
-            hintText: 'Search services...',
+            hintText: 'text_Search_services'.tr,
             hintStyle: context.textTheme.bodyMedium?.copyWith(
               color: context.isDarkMode ? Colors.grey[400] : Colors.grey[600],
             ),

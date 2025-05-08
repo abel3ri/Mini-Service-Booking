@@ -25,9 +25,9 @@ class ServiceDetailsView extends GetView<ServiceDetailsController> {
           }
           if (controller.service.value == null) {
             return RNotFound(
-              title: "Service not found!",
-              subtitle: "The requested service could not be fetched",
-              retryText: "Go Back",
+              title: "text_Service_not_found".tr,
+              subtitle: "text_The_requested_service_could_not_be_fetched".tr,
+              retryText: "text_Go_Back".tr,
               onRetry: () {
                 Get.back();
               },
@@ -62,7 +62,8 @@ class ServiceDetailsView extends GetView<ServiceDetailsController> {
                                 children: [
                                   Expanded(
                                     child: Text(
-                                      service?.name ?? "Unknown Service",
+                                      service?.name ??
+                                          "text_Unknown_Service".tr,
                                       style: context.textTheme.titleLarge
                                           ?.copyWith(
                                         fontWeight: FontWeight.bold,
@@ -109,7 +110,11 @@ class ServiceDetailsView extends GetView<ServiceDetailsController> {
                                         color: Get.theme.primaryColor,
                                       ),
                                       Text(
-                                        "${service?.duration} Minutes",
+                                        "text_Minutes".trParams({
+                                          'duration':
+                                              service?.duration?.toString() ??
+                                                  "N/A"
+                                        }),
                                         style: context.textTheme.titleSmall,
                                       ),
                                     ],
@@ -118,21 +123,21 @@ class ServiceDetailsView extends GetView<ServiceDetailsController> {
                               ),
                               SizedBox(height: Dimensions(context).height15),
                               Text(
-                                "Description",
+                                "text_Description".tr,
                                 style: context.textTheme.titleMedium,
                               ),
                               ReadMoreText(
                                 service?.description ??
-                                    "No description provided",
+                                    "text_No_description_provided".tr,
                               ),
                               SizedBox(height: Dimensions(context).height15),
                               Text(
-                                "Price",
+                                "text_Price".tr,
                                 style: context.textTheme.titleMedium,
                               ),
                               Text.rich(
                                 TextSpan(
-                                  text: "ETB ",
+                                  text: "text_ETB ".tr,
                                   children: [
                                     TextSpan(
                                       text: '${service?.price ?? "N/A"}',
@@ -169,7 +174,7 @@ class ServiceDetailsView extends GetView<ServiceDetailsController> {
                 children: [
                   Expanded(
                     child: ROutlinedButton(
-                      label: "Delete",
+                      label: "text_Delete".tr,
                       onPressed: () async => controller.deleteService(),
                       color: Get.theme.colorScheme.error,
                     ),
@@ -177,7 +182,7 @@ class ServiceDetailsView extends GetView<ServiceDetailsController> {
                   SizedBox(width: Dimensions(context).width15),
                   Expanded(
                     child: RMainButton(
-                      label: "Edit",
+                      label: "text_Edit".tr,
                       onPressed: () {
                         Get.toNamed("/service-form", arguments: {
                           "is_editing": true,

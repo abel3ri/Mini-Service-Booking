@@ -68,10 +68,10 @@ class SettingsView extends GetView<SettingsController> {
                         ),
                         SizedBox(height: Dimensions(context).height15),
                         SettingsCard(
-                          label: "Preferences".tr,
+                          label: "text_Preferences".tr,
                           entries: [
                             SettingEntryListTile(
-                              label: "Theme".tr,
+                              label: "text_Theme".tr,
                               icon: "assets/dev_icons/theme.svg",
                               onTap: () {
                                 rShowModalBottomSheet(
@@ -80,7 +80,7 @@ class SettingsView extends GetView<SettingsController> {
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
                                       SettingPreferenceTile(
-                                        label: "System".tr,
+                                        label: "text_System".tr,
                                         leading: RStyledIcon(
                                           icon: "assets/dev_icons/phone.svg",
                                         ),
@@ -93,7 +93,7 @@ class SettingsView extends GetView<SettingsController> {
                                         },
                                       ),
                                       SettingPreferenceTile(
-                                        label: "Light".tr,
+                                        label: "text_Light".tr,
                                         leading: RStyledIcon(
                                           icon: "assets/dev_icons/light.svg",
                                         ),
@@ -104,7 +104,7 @@ class SettingsView extends GetView<SettingsController> {
                                         },
                                       ),
                                       SettingPreferenceTile(
-                                        label: "Dark".tr,
+                                        label: "text_Dark".tr,
                                         leading: RStyledIcon(
                                           icon: "assets/dev_icons/dark.svg",
                                         ),
@@ -117,7 +117,7 @@ class SettingsView extends GetView<SettingsController> {
                                         },
                                       ),
                                       SettingPreferenceTile(
-                                        label: "Cancel".tr,
+                                        label: "text_Cancel".tr,
                                         leading: Icon(Icons.close),
                                         onTap: () {
                                           Get.back();
@@ -129,7 +129,7 @@ class SettingsView extends GetView<SettingsController> {
                               },
                             ),
                             SettingEntryListTile(
-                              label: "Language".tr,
+                              label: "text_Language".tr,
                               icon: "assets/dev_icons/language.svg",
                               onTap: () {
                                 rShowModalBottomSheet(
@@ -162,7 +162,7 @@ class SettingsView extends GetView<SettingsController> {
                                         },
                                       ),
                                       SettingPreferenceTile(
-                                        label: "Cancel".tr,
+                                        label: "text_Cancel".tr,
                                         leading: Icon(Icons.close),
                                         onTap: () {
                                           Get.back();
@@ -180,7 +180,7 @@ class SettingsView extends GetView<SettingsController> {
                         SettingsCard(
                           entries: [
                             SettingEntryListTile(
-                              label: "Logout".tr,
+                              label: "text_Logout".tr,
                               onTap: () {
                                 Get.offAllNamed(
                                   "/login",

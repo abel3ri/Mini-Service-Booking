@@ -32,7 +32,7 @@ class HomeView extends GetView<HomeController> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "Popular Services",
+                  "text_Popular_Services".tr,
                   style: context.textTheme.titleSmall,
                 ),
                 TextButton(
@@ -40,7 +40,7 @@ class HomeView extends GetView<HomeController> {
                     Get.toNamed("/services");
                   },
                   child: Text(
-                    "View All",
+                    "text_View_All".tr,
                     style: context.textTheme.titleSmall?.copyWith(
                       color: Get.theme.primaryColor,
                     ),

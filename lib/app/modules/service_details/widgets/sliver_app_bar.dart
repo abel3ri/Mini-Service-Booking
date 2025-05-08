@@ -54,7 +54,7 @@ Widget sliverAppBar(BuildContext context, ServiceModel? service) {
                   ? Colors.green
                   : Colors.red,
               child: Text(
-                "${(service.isAvailable ?? false) == true ? "Available" : "Unavailable"}",
+                "${(service.isAvailable ?? false) == true ? "text_Available".tr : "text_Unavailable".tr}",
                 style: context.textTheme.titleSmall?.copyWith(
                   color: Colors.white,
                 ),
