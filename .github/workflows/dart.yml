@@ -31,7 +31,7 @@ jobs:
         run: flutter build apk --release
 
       - name: Rename APK for upload
-        run: mv build/app/outputs/flutter-apk/app-release.apk FlutterApkExport.apk
+        run: mv build/app/outputs/flutter-apk/app-release.apk Mini_Service_Booking.apk
 
       - name: Upload binaries to release
         uses: svenstaro/upload-release-action@v2
