@@ -37,7 +37,7 @@ jobs:
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: FlutterApkExport.apk
+          file: Mini_Service_Booking.apk
           tag: v1.0
           overwrite: true
           body: "This is first Android release"
