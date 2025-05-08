@@ -37,7 +37,16 @@ dependencies:
   get: ^4.7.2
   google_fonts: ^6.2.1
   shared_preferences: ^2.5.3
-
+  introduction_screen: ^3.1.17
+  lottie: ^3.3.1
+  flutter_svg: ^2.1.0
+  cached_network_image: ^3.4.1
+  equatable: ^2.0.7
+  flutter_staggered_grid_view: ^0.7.0
+  fpdart: ^1.1.1
+  shimmer: ^3.0.0
+  infinite_scroll_pagination: ^5.0.0
+  readmore: ^3.0.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -60,8 +69,13 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
+  assets:
+    - assets/social_icons/
+    - assets/navigation_icons/
+    - assets/lotties/
+    - assets/flags/
+    - assets/dev_icons/
+    - assets/misc/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
