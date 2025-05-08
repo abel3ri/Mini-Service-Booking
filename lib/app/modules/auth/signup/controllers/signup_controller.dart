@@ -7,12 +7,13 @@ class SignupController extends GetxController {
   final TextEditingController passwordController = TextEditingController();
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   final RxBool isLoading = false.obs;
+  final RxBool showPassword = false.obs;
 
   Future<void> signup() async {
-    if (Get.focusScope?.hasFocus ?? false) {
-      Get.focusScope?.unfocus();
-    }
     if (formKey.currentState?.validate() ?? false) {
+      if (Get.focusScope?.hasFocus ?? false) {
+        Get.focusScope?.unfocus();
+      }
       isLoading(true);
       await Future.delayed(Duration(seconds: 2));
       isLoading(false);

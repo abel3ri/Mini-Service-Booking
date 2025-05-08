@@ -50,13 +50,24 @@ class LoginView extends GetView<LoginController> {
                         textInputAction: TextInputAction.next,
                       ),
                       SizedBox(height: Dimensions(context).height15),
-                      RInputField(
-                        controller: controller.passwordController,
-                        labelText: "Password",
-                        prefixIcon: Icons.lock_rounded,
-                        validator: FormValidator.passwordValidator,
-                        keyboardType: TextInputType.visiblePassword,
-                        textInputAction: TextInputAction.done,
+                      Obx(
+                        () => RInputField(
+                          controller: controller.passwordController,
+                          labelText: "Password",
+                          prefixIcon: Icons.lock_rounded,
+                          validator: FormValidator.passwordValidator,
+                          keyboardType: TextInputType.visiblePassword,
+                          textInputAction: TextInputAction.done,
+                          obscureText:
+                              controller.showPassword.isTrue ? false : true,
+                          onShowPasswordTap: () {
+                            controller
+                                .showPassword(!controller.showPassword.value);
+                          },
+                          suffixIcon: controller.showPassword.isTrue
+                              ? Icons.visibility_rounded
+                              : Icons.visibility_off_rounded,
+                        ),
                       ),
                       SizedBox(height: Dimensions(context).height30),
                       Row(
