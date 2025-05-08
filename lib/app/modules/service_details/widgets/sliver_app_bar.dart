@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mini_service_booking/app/data/models/core/service_model.dart';
 import 'package:mini_service_booking/core/utils/dimensions.dart';
+import 'package:mini_service_booking/core/widgets/buttons/r_circled_icon_button.dart';
 import 'package:mini_service_booking/core/widgets/cards/r_card.dart';
 
 Widget sliverAppBar(BuildContext context, ServiceModel? service) {
@@ -31,16 +32,32 @@ Widget sliverAppBar(BuildContext context, ServiceModel? service) {
           Positioned(
             top: Dimensions(context).height40,
             left: Dimensions(context).width30,
-            child: RCard(
-              onPressed: () {
+            child: RCircledIconButton(
+              icon: Icons.arrow_back_ios_new_rounded,
+              onTap: () {
                 Get.back();
               },
+            ),
+          ),
+          Positioned(
+            top: Dimensions(context).height40,
+            right: Dimensions(context).width30,
+            child: RCard(
               isElevated: false,
-              borderRadius: Dimensions(context).radius60,
               showBorder: false,
-              padding: EdgeInsets.all(8),
-              child: Icon(
-                Icons.arrow_back_ios_new_rounded,
+              borderRadius: Dimensions(context).radius100,
+              padding: EdgeInsets.symmetric(
+                horizontal: Dimensions(context).width30,
+                vertical: Dimensions(context).height10,
+              ),
+              color: (service.isAvailable ?? false) == true
+                  ? Colors.green
+                  : Colors.red,
+              child: Text(
+                "${(service.isAvailable ?? false) == true ? "Available" : "Unavailable"}",
+                style: context.textTheme.titleSmall?.copyWith(
+                  color: Colors.white,
+                ),
               ),
             ),
           ),
