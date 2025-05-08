@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:mini_service_booking/core/utils/dimensions.dart';
 
 class RInputField extends StatelessWidget {
   final TextEditingController? controller;
@@ -8,6 +9,12 @@ class RInputField extends StatelessWidget {
   final bool obscureText;
   final String? Function(String?)? validator;
   final TextInputType? keyboardType;
+  final TextInputAction? textInputAction;
+  final bool isMultiline;
+  final int? maxLines;
+  final int? minLines;
+  final IconData? suffixIcon;
+  final void Function()? onShowPasswordTap;
 
   const RInputField({
     Key? key,
@@ -17,6 +24,12 @@ class RInputField extends StatelessWidget {
     this.obscureText = false,
     this.validator,
     this.keyboardType,
+    this.textInputAction,
+    this.isMultiline = false,
+    this.maxLines,
+    this.minLines,
+    this.suffixIcon,
+    this.onShowPasswordTap,
   }) : super(key: key);
 
   @override
@@ -24,8 +37,11 @@ class RInputField extends StatelessWidget {
     return TextFormField(
       controller: controller,
       obscureText: obscureText,
-      keyboardType: keyboardType,
+      keyboardType: isMultiline ? TextInputType.multiline : keyboardType,
+      textInputAction: isMultiline ? TextInputAction.newline : textInputAction,
       validator: validator,
+      maxLines: isMultiline ? (maxLines ?? null) : 1,
+      minLines: isMultiline ? (minLines ?? 3) : 1,
       decoration: InputDecoration(
         labelText: labelText,
         labelStyle: TextStyle(
@@ -57,17 +73,24 @@ class RInputField extends StatelessWidget {
           ),
         ),
         filled: true,
-        fillColor: Theme.of(context).colorScheme.surface.withValues(alpha: 0.8),
-        contentPadding: const EdgeInsets.symmetric(
-          horizontal: 16,
-          vertical: 20,
+        fillColor: context.theme.colorScheme.surface.withValues(alpha: 0.8),
+        contentPadding: EdgeInsets.symmetric(
+          horizontal: Dimensions(context).width30,
+          vertical: isMultiline
+              ? Dimensions(context).height20
+              : Dimensions(context).height15,
         ),
+        suffixIcon: suffixIcon != null
+            ? GestureDetector(
+                onTap: onShowPasswordTap,
+                child: Icon(
+                  suffixIcon,
+                  size: Dimensions(context).iconSize20,
+                ),
+              )
+            : null,
       ),
-      style: TextStyle(
-        fontFamily: Theme.of(context).textTheme.bodyMedium?.fontFamily,
-        fontSize: 16,
-        color: Theme.of(context).colorScheme.onSurface,
-      ),
+      style: context.textTheme.bodyLarge,
     );
   }
 }

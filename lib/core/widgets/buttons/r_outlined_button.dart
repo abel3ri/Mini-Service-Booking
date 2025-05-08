@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
 import 'package:mini_service_booking/core/utils/dimensions.dart';
 
-class RMainButton extends StatelessWidget {
-  const RMainButton({
+class ROutlinedButton extends StatelessWidget {
+  const ROutlinedButton({
     super.key,
     required this.label,
     required this.onPressed,
@@ -13,7 +12,7 @@ class RMainButton extends StatelessWidget {
     this.color,
   });
 
-  const RMainButton.icon({
+  const ROutlinedButton.icon({
     super.key,
     required this.label,
     required this.onPressed,
@@ -30,10 +29,14 @@ class RMainButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FilledButton(
+    return OutlinedButton(
       onPressed: isLoading ? null : onPressed,
-      style: FilledButton.styleFrom(
-        backgroundColor: color,
+      style: OutlinedButton.styleFrom(
+        foregroundColor: color ?? Get.theme.primaryColor,
+        side: BorderSide(
+          color: color ?? Get.theme.primaryColor,
+          width: 2,
+        ),
         minimumSize: Size(
           Dimensions(context).buttonWidth,
           Dimensions(context).buttonHeight,
@@ -53,7 +56,9 @@ class RMainButton extends StatelessWidget {
             SizedBox(
               width: Dimensions(context).iconSize16,
               height: Dimensions(context).iconSize16,
-              child: CircularProgressIndicator(),
+              child: CircularProgressIndicator(
+                color: color ?? Get.theme.primaryColor,
+              ),
             ),
             SizedBox(width: Dimensions(context).width10),
           ],
@@ -61,7 +66,9 @@ class RMainButton extends StatelessWidget {
             overflow: TextOverflow.ellipsis,
             label,
             style: context.textTheme.titleMedium!.copyWith(
-              color: !isLoading ? Colors.white : null,
+              color: isLoading
+                  ? (context.isDarkMode ? Colors.grey[400] : Colors.grey[600])
+                  : (color ?? Get.theme.primaryColor),
               fontSize: Dimensions(context).font12,
             ),
             textAlign: TextAlign.center,
@@ -71,7 +78,9 @@ class RMainButton extends StatelessWidget {
             Icon(
               icon,
               size: Dimensions(context).iconSize20,
-              color: Colors.white,
+              color: isLoading
+                  ? (context.isDarkMode ? Colors.grey[400] : Colors.grey[600])
+                  : (color ?? Get.theme.primaryColor),
             ),
           ],
         ],
