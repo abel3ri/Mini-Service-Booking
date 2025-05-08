@@ -3,37 +3,37 @@ import 'package:get/get_utils/get_utils.dart';
 class FormValidator {
   static String? emailValidator(String? value) {
     if ((value == null || value.isEmpty)) {
-      return "Please provide an email address".tr;
+      return "text_Please_provide_an_email_address".tr;
     }
     if (!value.isEmail) {
-      return "Please provide a valid email address".tr;
+      return "text_Please_provide_a_valid_email_address".tr;
     }
     return null;
   }
 
   static String? userNameValidator(String? value) {
     if ((value == null || value.isEmpty)) {
-      return "Please provide a username".tr;
+      return "text_Please_provide_a_username".tr;
     }
     if (!value.isAlphabetOnly) {
-      return "Please provide a valid username".tr;
+      return "text_Please_provide_a_valid_username".tr;
     }
     return null;
   }
 
   static String? passwordValidator(String? value) {
     if ((value == null || value.isEmpty)) {
-      return "Please provide a password".tr;
+      return "text_Please_provide_a_password".tr;
     }
     if (value.length < 8) {
-      return "Password must be at least 8 chars long".tr;
+      return "text_Password_must_be_at_least_8_chars_long".tr;
     }
     return null;
   }
 
   static String? requiredValidator(String? value) {
     if ((value == null || value.isEmpty)) {
-      return "This field is required".tr;
+      return "text_This_field_is_required".tr;
     }
     return null;
   }

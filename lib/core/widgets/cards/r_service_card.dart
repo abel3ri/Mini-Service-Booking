@@ -121,11 +121,11 @@ class RServiceCard extends StatelessWidget {
                       if (showPrice)
                         Text.rich(
                           TextSpan(
-                            text: "ETB ",
+                            text: "text_ETB",
                             children: [
                               TextSpan(
                                 text:
-                                    service.price?.toStringAsFixed(2) ?? "N/A",
+                                    ' ${service.price?.toStringAsFixed(2) ?? "N/A"}',
                                 style: context.textTheme.titleMedium,
                               )
                             ],

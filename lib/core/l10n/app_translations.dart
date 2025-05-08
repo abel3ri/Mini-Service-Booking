@@ -69,6 +69,17 @@ class AppTranslations extends Translations {
           "text_ETB_Price": "ETB @price",
           "text_Rating_Min": "Rating (Min: @minRating)",
           "text_Apply_Filter": "Apply Filter",
+          "text_Please_provide_an_email_address":
+              "Please provide an email address",
+          "text_Please_provide_a_valid_email_address":
+              "Please provide a valid email address",
+          "text_Please_provide_a_username": "Please provide a username",
+          "text_Please_provide_a_valid_username":
+              "Please provide a valid username",
+          "text_Please_provide_a_password": "Please provide a password",
+          "text_Password_must_be_at_least_8_chars_long":
+              "Password must be at least 8 chars long",
+          "text_This_field_is_required": "This field is required",
         },
         "am_ET": {
           "langauge": "ቋንቋ",
@@ -136,6 +147,15 @@ class AppTranslations extends Translations {
           "text_ETB_Price": "@price ብር",
           "text_Rating_Min": "ደረጃ (ዝቅተኛ: @minRating)",
           "text_Apply_Filter": "ማጣሪያውን ይተግብሩ",
+          "text_Please_provide_an_email_address": "እባክዎ የኢሜይል አድራሻ ያስገቡ",
+          "text_Please_provide_a_valid_email_address":
+              "እባክዎ ትክክለኛ የኢሜይል አድራሻ ያስገቡ",
+          "text_Please_provide_a_username": "እባክዎ የተጠቃሚ ስም ያስገቡ",
+          "text_Please_provide_a_valid_username": "እባክዎ ትክክለኛ የተጠቃሚ ስም ያስገቡ",
+          "text_Please_provide_a_password": "እባክዎ የይለፍ ቃል ያስገቡ",
+          "text_Password_must_be_at_least_8_chars_long":
+              "የይለፍ ቃል ቢያንስ 8 ቁምፊዎች ሊኖሩት ይገባል",
+          "text_This_field_is_required": "ይህ መስክ አስፈላጊ ነው",
         },
       };
 }

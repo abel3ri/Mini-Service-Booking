@@ -137,10 +137,10 @@ class ServiceDetailsView extends GetView<ServiceDetailsController> {
                               ),
                               Text.rich(
                                 TextSpan(
-                                  text: "text_ETB ".tr,
+                                  text: "text_ETB".tr,
                                   children: [
                                     TextSpan(
-                                      text: '${service?.price ?? "N/A"}',
+                                      text: ' ${service?.price ?? "N/A"}',
                                       style: context.textTheme.headlineLarge
                                           ?.copyWith(
                                         color: Get.theme.primaryColor,
