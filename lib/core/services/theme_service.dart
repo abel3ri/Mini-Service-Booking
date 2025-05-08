@@ -3,21 +3,21 @@ import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme {
   static ThemeData lightTheme = ThemeData(
-    primaryColor: const Color(0xFF9C27B0),
+    primaryColor: const Color(0xFF7C4DFF),
     colorScheme: const ColorScheme.light(
-      primary: Color(0xFF9C27B0),
-      primaryContainer: Color(0xFFE1BEE7),
-      secondary: Color(0xFFEC407A),
-      secondaryContainer: Color(0xFFF8BBD0),
-      tertiary: Color(0xFFBA68C8),
-      error: Color(0xFFE53935),
-      surface: Color(0xFFF5F5F5),
+      primary: Color(0xFF7C4DFF),
+      primaryContainer: Color(0xFFD1C4E9),
+      secondary: Color(0xFF9575CD),
+      secondaryContainer: Color(0xFFEDE7F6),
+      tertiary: Color(0xFFB388FF),
+      error: Color(0xFFF06292),
+      surface: Color(0xFFFAF8FF),
     ),
     appBarTheme: const AppBarTheme(
       backgroundColor: Colors.transparent,
       elevation: 0,
     ),
-    scaffoldBackgroundColor: const Color(0xFFF5F5F5),
+    scaffoldBackgroundColor: const Color(0xFFFAF8FF),
     visualDensity: VisualDensity.adaptivePlatformDensity,
     useMaterial3: true,
     fontFamily: GoogleFonts.raleway().fontFamily,
@@ -35,12 +35,12 @@ class AppTheme {
   );
 
   static ThemeData darkTheme = ThemeData(
-    primaryColor: const Color(0xFFBA68C8),
+    primaryColor: const Color(0xFFB47CFF),
     appBarTheme: const AppBarTheme(
       backgroundColor: Colors.transparent,
       elevation: 0,
     ),
-    scaffoldBackgroundColor: const Color(0xFF121212),
+    scaffoldBackgroundColor: const Color(0xFF1C1B2D),
     visualDensity: VisualDensity.adaptivePlatformDensity,
     useMaterial3: true,
     fontFamily: GoogleFonts.raleway().fontFamily,
@@ -65,16 +65,16 @@ class AppTheme {
           fontSize: 30, fontWeight: FontWeight.bold, color: Colors.white),
     ),
     colorScheme: ColorScheme.fromSeed(
-      seedColor: const Color(0xFFBA68C8),
+      seedColor: const Color(0xFFB47CFF),
       brightness: Brightness.dark,
     ).copyWith(
-      primary: const Color(0xFFBA68C8),
-      primaryContainer: const Color(0xFF7B1FA2),
-      secondary: const Color(0xFFEC407A),
-      secondaryContainer: const Color(0xFFAD1457),
-      tertiary: const Color(0xFFAB47BC),
-      error: const Color(0xFFEF5350),
-      surface: const Color(0xFF121212),
+      primary: const Color(0xFFB47CFF),
+      primaryContainer: const Color(0xFF6A1B9A),
+      secondary: const Color(0xFFAB47BC),
+      secondaryContainer: const Color(0xFF7B1FA2),
+      tertiary: const Color(0xFFE1BEE7),
+      error: const Color(0xFFFF6E7F),
+      surface: const Color(0xFF1C1B2D),
     ),
   );
 }

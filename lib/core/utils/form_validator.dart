@@ -11,12 +11,29 @@ class FormValidator {
     return null;
   }
 
+  static String? userNameValidator(String? value) {
+    if ((value == null || value.isEmpty)) {
+      return "Please provide a username".tr;
+    }
+    if (!value.isAlphabetOnly) {
+      return "Please provide a valid username".tr;
+    }
+    return null;
+  }
+
   static String? passwordValidator(String? value) {
     if ((value == null || value.isEmpty)) {
       return "Please provide a password".tr;
     }
     if (value.length < 8) {
       return "Password must be at least 8 chars long".tr;
+    }
+    return null;
+  }
+
+  static String? requiredValidator(String? value) {
+    if ((value == null || value.isEmpty)) {
+      return "This field is required".tr;
     }
     return null;
   }
