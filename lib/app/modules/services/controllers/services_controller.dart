@@ -24,6 +24,8 @@ class ServicesController extends GetxController {
         final query = {
           "limit": limit.toString(),
           "page": pageKey.toString(),
+          "orderBy": "createdAt",
+          "order": "desc"
         };
         if (_searchTerm != null && _searchTerm!.isNotEmpty) {
           query["search"] = _searchTerm!;
