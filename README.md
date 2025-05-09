@@ -2,6 +2,7 @@
 
 Flutter-based mobile application built with GetX for state management, designed to simplify service discovery and booking. Features include a user-friendly interface, reactive service filtering (by category, price, and rating), and a mock API backend for CRUD operations. The app showcases clean architecture, responsive design, and reusable widgets, making it a great example for learning Flutter and GetX.
 
+- Download the [APK](https://github.com/abel3ri/Mini-Service-Booking/releases/download/v1.0/Mini_Service_Booking.apk)
 - Tech Stack: Flutter, GetX, MockAPI
 - Key Features: Service browsing, filtering, reactive UI
 - GitHub: https://github.com/abel3ri/Mini-Service-Booking
@@ -61,6 +62,10 @@ lib/
 <img src="https://github.com/user-attachments/assets/66c8e408-bffc-4702-8c7e-dcab0f4896ef" alt="Screenshot 2" width="250">
 <img src="https://github.com/user-attachments/assets/6df9143b-89a1-4f53-83a6-0c39f072b538" alt="Screenshot 1" width="250">
 <img src="https://github.com/user-attachments/assets/71ce486e-7105-4c01-8d1b-b236930bcf91" alt="Screenshot 3" width="250">
+
+- Searching and Filtering
+<img src="https://github.com/user-attachments/assets/dd3fa052-abde-41c7-83a6-3dd4395610ab" alt="Screenshot 2" width="250">
+<img src="https://github.com/user-attachments/assets/8a3addaf-e2ee-483d-9713-2ab74d797377" alt="Screenshot 1" width="250">
 
 
 ## Contributing
